@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI-Wallet - My Wallets</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+  </head>
+  <body>
+    <header>
+      <h1>ƧI-Wallet</h1>
+
+      <div class="burger-menu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+<nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wallets.html" class="active">My Wallets</a></li>
+          <li><a href="transaction-history.html">Transactions</a></li>
+          <li><a href="user-profile.html">Profile</a></li>
+          <li><a href="help-center.html">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="login-btn" id="logout-btn">
+          <p>Logout</p>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <h1 class="h1-page-title">My Wallets</h1>
+
+      <section class="wallet-dashboard">
+        <div class="wallet-summary">
+          <div class="summary-header">
+            <div>
+              <p>Total Balance</p>
+              <div class="total-balance">$12,456.78</div>
+            </div>
+            <button class="add-wallet-btn" onclick="openAddWalletModal()">
+              <i class="fa fa-plus"></i> Add New Wallet
+            </button>
+          </div>
+
+          <section class="wallets-container">
+         
+
+          
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Add New Wallet Modal -->
+    <div class="modal-overlay" id="addWalletModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Add New Wallet</h2>
+          <button class="close-modal" onclick="closeAddWalletModal()">×</button>
+        </div>
+        <form class="normal flex-col sign-up-box ">
+          <div class="sign-up-input-box">
+            <label for="card-number">Card Number</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="XXXX XXXX XXXX XXXX"
+              maxlength="19"
+              
+            />
+          </div>
+        
+          <div>
+            <div class="sign-up-input-box">
+              <label for="expiry-date">Expiry Date</label>
+              <input
+                type="text"
+                id="expiry-date"
+                placeholder="MM/YY"
+                maxlength="5"
+                minlength="5"
+                pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+              />
+            </div>
+            <div class="sign-up-input-box">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="XXX" maxlength="3" minlength="3" pattern="\d{3}" oninput="this.value = this.value.replace(/\D/g, '')"/>
+            </div>
+          </div>
+          <div class="sign-up-input-box">
+            <label for="card-type">Card Type</label>
+            <select id="card-type">
+              <option value="Visa">VISA</option>
+              <option value="Mastercard">Mastercard</option>
+              <option value="Amex">American Express</option>
+              <option value="Discover">Discover</option>
+            </select>
+          </div>
+          <div class="actions">
+          <button type="button" class="submit-btn" onclick="addNewWallet()">
+            <p>Add Wallet</p>
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="deleteWalletModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Delete Wallet</h2>
+          <button class="close-modal" onclick="closeDeleteModal()">×</button>
+        </div>
+        <div class="modal-content">
+          <p>Are you sure you want to delete this wallet?</p>
+          <p>This action cannot be undone.</p>
+        </div>
+        <div class="actions">
+          <button class="login-btn" onclick="closeDeleteModal()">
+            <p>Cancel</p>
+          </button>
+          <button class="submit-btn" onclick="deleteWallet()">
+            <p>Delete Wallet</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          SI-Wallet Copyright © 2025 SI-Wallet - All rights reserved
+        </div>
+      </div>
+    </footer>
+    <div id="message-container" class="message-container">
+      <span id="message-text"></span>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/wallets.js"></script>
+    
+    
+  
+  
+    
+  </body>
+</html>

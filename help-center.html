@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI-Wallet - Help Center</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ƧI-Wallet</h1>
+
+      <div class="burger-menu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+<nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wallets.html">My Wallets</a></li>
+          <li><a href="transaction-history.html">Transactions</a></li>
+          <li><a href="user-profile.html">Profile</a></li>
+          <li><a href="help-center.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="login-btn" id="logout-btn">
+          <p>Logout</p>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <h1 class="h1-page-title">Help Center</h1>
+
+      <div class="transfer-options">
+        <button class="option-btn" onclick="showSection('faq')">
+          Frequently Asked Questions
+        </button>
+        <button class="option-btn" onclick="showSection('support')">
+          Contact Support
+        </button>
+      </div>
+
+      <div id="faq-section" class="help-section">
+        <h2>FAQs</h2>
+        <section class="faq-container">
+          <div>
+            <h3>How do I create a new wallet?</h3>
+            <p>
+              To create a new wallet, navigate to the "My Wallets" page and
+              click the "Add New Wallet" button. Fill in the required card
+              details including card number, cardholder name, expiry date, and
+              CVV. Note that the number of wallets you can create depends on
+              your account verification level. Tier 1 users can have one wallet,
+              while fully verified users can create multiple wallets.
+            </p>
+          </div>
+
+          <div>
+            <h3>What are the daily transaction limits?</h3>
+            <p>
+              Transaction limits vary by account tier:<br />
+              - Tier 1 (Basic): $50 per transaction, 1 wallet maximum<br />
+              - Tier 2 (Email Verified): Unlimited transfers, 1 wallet
+              maximum<br />
+              - Tier 3 (Fully Verified): Unlimited transfers, unlimited
+              wallets<br /><br />
+              To increase your limits, complete the verification process in your
+              profile settings.
+            </p>
+          </div>
+
+          <div>
+            <h3>How do I verify my account?</h3>
+            <p>
+              To verify your account, go to your Profile page and select
+              "Verification". You'll need to verify your email first by clicking
+              the link sent to your registered email address. For full
+              verification (Tier 3), you'll need to upload a photo of your ID
+              document (passport or driver's license) and a selfie. Verification
+              is usually processed within 24-48 hours.
+            </p>
+          </div>
+
+          <div>
+            <h3>How do I send money to another user?</h3>
+            <p>
+              To send money to another user, go to the "Transfer" page and
+              select "P2P Transfer". You can send money either by entering the
+              recipient's username or by scanning their QR code. Enter the
+              amount you wish to send and add an optional note. You can also
+              schedule the transfer for a future date if needed. The transfer
+              will be processed immediately unless scheduled.
+            </p>
+          </div>
+
+          <div>
+            <h3>Are there any fees for using SI-Wallet?</h3>
+            <p>
+              SI-Wallet charges minimal fees:<br />
+              - Deposits: Free<br />
+              - P2P Transfers: Free<br />
+              - Withdrawals: 1% of the amount (minimum $0.50)<br />
+              - Currency conversion: 2.5% of the transaction amount<br /><br />
+              All fees are displayed before you confirm any transaction.
+            </p>
+          </div>
+
+          <div>
+            <h3>How secure is SI-Wallet?</h3>
+            <p>
+              SI-Wallet employs bank-level security measures to protect your
+              data and funds. We use end-to-end encryption for all transactions,
+              two-factor authentication for account access, and regular security
+              audits. Your card details are encrypted and never stored in plain
+              text. We also monitor accounts for suspicious activity and provide
+              instant notifications for all transactions.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div id="support-section" class="help-section disp-none">
+        <section
+          id="contact"
+          class="contact home-section bg-transparent m-0 p-0"
+        >
+          <h2>Send a Ticket</h2>
+          <section class="section-form">
+            <form>
+              <div class="sign-up-input-box">
+                <label>Subject:</label>
+                <input id="subject" type="text" placeholder="Subject" />
+              </div>
+              <div class="sign-up-input-box">
+                <label>Message:</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
+              <div class="actions">
+                <button type="button" class="signup-btn" onclick="submitTicket()">
+                  <p>Submit</p>
+                </button>
+              </div>
+            </form>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          SI-Wallet Copyright © 2025 SI-Wallet - All rights reserved
+        </div>
+      </div>
+    </footer>
+
+    <div id="message-container" class="message-container">
+      <span id="message-text"></span>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/help-center.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI-Wallet - Transaction History</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <h1>ƧI-Wallet</h1>
+
+      <div class="burger-menu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+<nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wallets.html">My Wallets</a></li>
+          <li><a href="transaction-history.html" class="active">Transactions</a></li>
+          <li><a href="user-profile.html">Profile</a></li>
+          <li><a href="help-center.html">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="login-btn" id="logout-btn">
+          <p>Logout</p>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <h1 class="h1-page-title">Transaction History</h1>
+
+      <!-- Search Filters -->
+      <div class="summary-header">
+        <div class="flex">
+            <div id="schedule-container" class="schedule-container flex">
+                <div class="sign-up-input-box form-box-font-size">
+                  <label for="schedule-date">Transfer Date</label>
+                  <input type="date" id="schedule-date" />
+                </div>
+              </div>
+              <div id="schedule-container" class="schedule-container flex">
+                <div class="sign-up-input-box form-box-font-size">
+                  <label for="schedule-date">Transfer Date</label>
+                  <input type="date" id="schedule-date" />
+                </div>
+              </div>
+        </div>
+        <div class="sign-up-input-box">
+          <label for="status-filter">Status:</label>
+          <select id="status-filter">
+            <option value="all">All Transactions</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+            <option value="scheduled">Scheduled</option>
+          </select>
+        </div>
+        <div class="actions">
+            <button class="transfer-btn">
+              Search
+            </button>
+          </div>
+      </div>
+
+      <!-- Transactions Table -->
+      <div class="table-container">
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Transaction ID</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Feb 27, 2025</td>
+              <td>TX-78945612</td>
+              <td class="type-deposit">Deposit</td>
+              <td>Completed</td>
+              <td class="type-deposit">+$1,500.00</td>
+              <td>Salary deposit</td>
+            </tr>
+            <tr>
+              <td>Feb 26, 2025</td>
+              <td>TX-78945613</td>
+              <td class="type-withdraw">Withdraw</td>
+              <td>Completed</td>
+              <td class="type-withdraw">-$50.75</td>
+              <td>ATM withdrawal</td>
+            </tr>
+            <tr>
+              <td>Feb 25, 2025</td>
+              <td>TX-78945614</td>
+              <td class="type-p2p">P2P</td>
+              <td>Completed</td>
+              <td class="type-withdraw">-$125.00</td>
+              <td>Payment to Jane Smith</td>
+            </tr>
+            <tr>
+              <td>Feb 24, 2025</td>
+              <td>TX-78945615</td>
+              <td class="type-withdraw">Withdraw</td>
+              <td>Pending</td>
+              <td class="type-withdraw">-$200.00</td>
+              <td>Online purchase</td>
+            </tr>
+            <tr>
+              <td>Mar 15, 2025</td>
+              <td>TX-78945616</td>
+              <td class="type-withdraw">Withdraw</td>
+              <td>Scheduled</td>
+              <td class="type-withdraw">-$1,200.00</td>
+              <td>Rent payment</td>
+            </tr>
+            <tr>
+              <td>Feb 22, 2025</td>
+              <td>TX-78945617</td>
+              <td class="type-p2p">P2P</td>
+              <td>Failed</td>
+              <td class="type-withdraw">-$75.00</td>
+              <td>Payment to Mike Johnson - Insufficient funds</td>
+            </tr>
+            <tr>
+              <td>Feb 20, 2025</td>
+              <td>TX-78945618</td>
+              <td class="type-deposit">Deposit</td>
+              <td>Completed</td>
+              <td class="type-deposit">+$250.00</td>
+              <td>Refund from Amazon</td>
+            </tr>
+            <tr>
+              <td>Mar 10, 2025</td>
+              <td>TX-78945619</td>
+              <td class="type-withdraw">Withdraw</td>
+              <td>Scheduled</td>
+              <td class="type-withdraw">-$89.99</td>
+              <td>Netflix subscription</td>
+            </tr>
+            <tr>
+              <td>Feb 18, 2025</td>
+              <td>TX-78945620</td>
+              <td class="type-p2p">P2P</td>
+              <td>Completed</td>
+              <td class="type-withdraw">-$35.50</td>
+              <td>Split dinner bill with Tom</td>
+            </tr>
+            <tr>
+              <td>Feb 15, 2025</td>
+              <td>TX-78945621</td>
+              <td class="type-withdraw">Withdraw</td>
+              <td>Completed</td>
+              <td class="type-withdraw">-$120.75</td>
+              <td>Grocery shopping</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          SI-Wallet Copyright © 2025 SI-Wallet - All rights reserved
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+  </body>
+</html>

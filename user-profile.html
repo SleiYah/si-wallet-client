@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI-Wallet - User Profile</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+  </head>
+  <body>
+    <header>
+      <h1>ƧI-Wallet</h1>
+
+      <div class="burger-menu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+<nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wallets.html">My Wallets</a></li>
+          <li><a href="transaction-history.html">Transactions</a></li>
+          <li><a href="user-profile.html" class="active">Profile</a></li>
+          <li><a href="help-center.html">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="login-btn" id="logout-btn">
+          <p>Logout</p>
+        </button>
+      </div>
+    </header>
+
+    <!-- Message container for displaying status messages -->
+    <div id="message-container" class="message-container">
+      <span id="message-text"></span>
+    </div>
+
+    <main class="main-container">
+      <h1 class="h1-page-title">User Profile</h1>
+
+      <div class="transfer-options">
+        <button class="option-btn" onclick="showProfileSection('personal')">
+          Personal Information
+        </button>
+        <button class="option-btn" onclick="showProfileSection('security')">
+          Security Settings
+        </button>
+        <button class="option-btn" onclick="showProfileSection('verification')">
+          Verification
+        </button>
+      </div>
+
+      <section id="personal-section" class="profile-section height-normal">
+        <h2>Personal Information</h2>
+
+        <div class="transfer-form-container">
+          <form id="personal-form">
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="Username" required />
+            </div>
+
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="firstname">First Name</label>
+              <input type="text" id="first_name" placeholder="First Name" required />
+            </div>
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="last_name" placeholder="Last Name" required />
+            </div>
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Email" required />
+            </div>
+
+            <div>
+              <button type="submit" class="submit-btn border-r5">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section
+        id="security-section"
+        class="profile-section disp-none height-normal"
+      >
+        <h2>Security Settings</h2>
+
+        <div class="profile-form-container">
+          <form id="security-form">
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="current-password">Current Password</label>
+              <input
+                type="password"
+                id="current-password"
+                placeholder="Enter your current password"
+                required
+              />
+            </div>
+
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="new-password">New Password</label>
+              <input
+                type="password"
+                id="new-password"
+                placeholder="Enter new password"
+                required
+              />
+            </div>
+
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="confirm-password">Confirm New Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                placeholder="Confirm new password"
+                required
+              />
+            </div>
+
+            <div>
+              <button type="submit" class="submit-btn border-r5">Change Password</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="verification-section" class="profile-section disp-none">
+        <h2>Account Verification</h2>
+
+        <div>
+          <div>
+            <h3>Email Verification</h3>
+            <p id="email-verification-status">
+              Your email (john.doe@example.com) is not verified. Please verify
+              your email to unlock basic features.
+            </p>
+          </div>
+          <div>
+            <button class="submit-btn border-r5" id="verify-email-btn">
+              Verify Email
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              <h3>Passport Verification</h3>
+              <p>
+                To unlock all features and remove limits, complete your passport
+                verification below.
+              </p>
+            </div>
+          </div>
+
+          <form id="verification-form">
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="id-upload">Upload Passport</label>
+              <div class="file-upload">
+                <button class="submit-btn border-r5">
+                  Select File
+                  <input type="file" id="id-upload" accept="image/*,.pdf" />
+                </button>
+              </div>
+              <small>Accepted formats: JPG, PNG, PDF (max 5MB)</small>
+            </div>
+
+            <div class="sign-up-input-box form-box-font-size">
+              <label for="selfie-upload">Upload Selfie</label>
+              <div class="file-upload">
+                <button class="submit-btn border-r5">
+                  Select File
+                  <input type="file" id="selfie-upload" accept="image/*" />
+                </button>
+              </div>
+              <small>Please take a selfie</small>
+            </div>
+
+            <div>
+              <button type="submit" class="submit-btn border-r5">
+                Submit ID Verification
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          SI-Wallet Copyright © 2025 SI-Wallet - All rights reserved
+        </div>
+      </div>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/user-profile.js"></script>
+
+  </body>
+</html>
