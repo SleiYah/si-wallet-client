@@ -69,7 +69,7 @@ function loadWallets() {
     }
     
     axios.post(
-        baseURL+'/wallets/v1/get-wallet-byId.php',
+        `${baseURL}/wallets/v1/get-wallet-byId.php`,
         {},
         {
             headers: {
@@ -201,7 +201,7 @@ function addNewWallet() {
         cvv: cvv
     };
     
-    axios.post(baseURL+'/wallets/v1/add-update-wallet.php', walletData, {
+    axios.post(`${baseURL}/wallets/v1/add-update-wallet.php`, walletData, {
         headers: {
             'Authorization': `Bearer ${authToken}`
         }
@@ -280,7 +280,7 @@ function deleteWallet() {
     }
     
     axios.post(
-        baseURL+'/wallets/v1/delete-wallet.php',
+        `${baseURL}/wallets/v1/delete-wallet.php`,
         { wallet_id: walletToDelete },
         {
             headers: {

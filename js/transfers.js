@@ -30,7 +30,7 @@ function loadSelectedWallet() {
       
       
       axios.post(
-          baseURL+'/wallets/v1/get-wallet-byId.php',
+          `${baseURL}/wallets/v1/get-wallet-byId.php`,
           {}, 
           {
               headers: {
@@ -71,7 +71,7 @@ function loadSelectedWallet() {
   
   
   axios.post(
-      baseURL+'/wallets/v1/get-wallet-byId.php',
+      `${baseURL}wallets/v1/get-wallet-byId.php`,
       { wallet_id: selectedWalletId },
       {
           headers: {
@@ -174,7 +174,7 @@ function toggleCardDetails(element) {
 
 function loadAllWallets(authToken) {
   axios.post(
-      baseURL+'/wallets/v1/get-wallet-byId.php',
+      `${baseURL}/wallets/v1/get-wallet-byId.php`,
       {}, 
       {
           headers: {
@@ -206,7 +206,7 @@ async function getUserWalletId(username) {
       }
       
       const response = await axios.post(
-          baseURL+'/wallets/v1/get-wallet-byUsername.php',
+          `${baseURL}/wallets/v1/get-wallet-byUsername.php`,
           { username: username },
           {
               headers: {
@@ -323,7 +323,7 @@ function submitTransfer(type) {
     }
     
     axios.post(
-        baseURL+'/transactions/v1/add-transaction.php',
+        `${baseURL}/transactions/v1/add-transaction.php`,
         transferData,
         {
             headers: {
