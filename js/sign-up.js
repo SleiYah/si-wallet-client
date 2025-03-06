@@ -66,7 +66,13 @@ function handleSignup() {
     
     
     
-    axios.post(`${baseURL}/users/v1/add-update-user.php`, userData)
+    axios.post(`${baseURL}/users/v1/add-update-user.php`, userData, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    
         .then(function(response) {
             console.log('Signup response received:', response.data);
             const data = response.data;
