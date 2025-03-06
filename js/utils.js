@@ -1,5 +1,5 @@
 
-const baseURL = "http://51.44.8.213/SI-Wallet/Wallet-Server"
+const baseURL = "siwalletbackend.zapto.org/SI-Wallet/Wallet-Server"
 
 document.addEventListener('DOMContentLoaded', function() {
   
