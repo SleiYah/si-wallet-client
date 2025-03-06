@@ -58,7 +58,7 @@ function handleLogin() {
     
     console.log('Sending login request with data:', JSON.stringify(loginData));
     
-    axios.post(baseURL +'/users/v1/user-login.php', loginData)
+    axios.post(`${baseURL}/users/v1/user-login.php`, loginData)
         .then(function(response) {
             console.log('Login response received:', response.data);
             
